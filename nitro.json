@@ -1,0 +1,32 @@
+{
+    "$schema": "https://nitro.margelo.com/nitro.schema.json",
+    "cxxNamespace": [
+        "nitro_zlib"
+    ],
+    "ios": {
+        "iosModuleName": "RNZlib"
+    },
+    "android": {
+        "androidNamespace": [
+            "nitro_zlib"
+        ],
+        "androidCxxLibName": "RNZlib"
+    },
+    "autolinking": {
+        "NitroZlib": {
+            "cpp": "HybridZlib"
+        }
+    },
+    "cxx": {
+        "extraIncludeDirs": [
+            "./cpp",
+            "../rust_c_zlib/include"
+        ],
+        "extraLibs": [
+            "rust_c_zlib"
+        ],
+        "extraLibDirs": [
+            "./lib"
+        ]
+    }
+}
