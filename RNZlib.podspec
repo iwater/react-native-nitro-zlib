@@ -19,7 +19,6 @@ Pod::Spec.new do |s|
   ]
 
   s.dependency "React-Core"
-  # s.dependency "react-native-nitro-modules"
 
   # Link the Rust dynamic framework
   s.vendored_frameworks = "ios/Frameworks/RNZlib.xcframework"

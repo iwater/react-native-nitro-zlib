@@ -1,6 +1,6 @@
 {
     "name": "react-native-nitro-zlib",
-    "version": "0.1.0",
+    "version": "0.1.3",
     "description": "Node.js Zlib implementation for React Native using Nitro Modules and Rust",
     "homepage": "https://github.com/iwater/react-native-nitro-zlib",
     "main": "./lib/index.js",
@@ -9,7 +9,7 @@
     "author": "iwater <iwater@gmail.com>",
     "license": "ISC",
     "scripts": {
-        "build": "tsc",
+        "build": "npx nitrogen@0.32.0 && tsc",
         "prepare": "npm run build",
         "copy-clib": "rm -rf ios/Frameworks/RNZlib.xcframework && cp -R ../rust_c_zlib/target/xcframework/RNZlib.xcframework ios/Frameworks/ && mkdir -p android/libs/arm64-v8a android/libs/armeabi-v7a android/libs/x86 android/libs/x86_64 && cp ../rust_c_zlib/target/aarch64-linux-android/release/librust_c_zlib.so android/libs/arm64-v8a/ && cp ../rust_c_zlib/target/armv7-linux-androideabi/release/librust_c_zlib.so android/libs/armeabi-v7a/ && cp ../rust_c_zlib/target/i686-linux-android/release/librust_c_zlib.so android/libs/x86/ && cp ../rust_c_zlib/target/x86_64-linux-android/release/librust_c_zlib.so android/libs/x86_64/",
         "copy-clib-ios": "rm -rf ios/Frameworks/RNZlib.xcframework && cp -R ../rust_c_zlib/target/xcframework/RNZlib.xcframework ios/Frameworks/",
@@ -17,13 +17,16 @@
     },
     "dependencies": {
         "@types/readable-stream": "^4.0.23",
-        "react-native-nitro-modules": "^0.31.10",
         "readable-stream": "^4.7.0"
     },
     "devDependencies": {
         "@types/node": "*",
-        "nitrogen": "^0.31.10",
+        "nitrogen": "^0.32.0",
+        "react-native-nitro-modules": "^0.32.0",
         "typescript": "^5.3.3"
+    },
+    "peerDependencies": {
+        "react-native-nitro-modules": "^0.32.0"
     },
     "packageManager": "yarn@4.12.0",
     "files": [
