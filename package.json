@@ -1,8 +1,9 @@
 {
     "name": "react-native-nitro-zlib",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "description": "Node.js Zlib implementation for React Native using Nitro Modules and Rust",
     "homepage": "https://github.com/iwater/react-native-nitro-zlib",
+    "type": "module",
     "main": "./lib/index.js",
     "module": "./lib/index.js",
     "types": "./lib/index.d.ts",
@@ -11,9 +12,10 @@
     "scripts": {
         "build": "npx nitrogen@0.32.0 && tsc",
         "prepare": "npm run build",
-        "copy-clib": "rm -rf ios/Frameworks/RNZlib.xcframework && cp -R ../rust_c_zlib/target/xcframework/RNZlib.xcframework ios/Frameworks/ && mkdir -p android/libs/arm64-v8a android/libs/armeabi-v7a android/libs/x86 android/libs/x86_64 && cp ../rust_c_zlib/target/aarch64-linux-android/release/librust_c_zlib.so android/libs/arm64-v8a/ && cp ../rust_c_zlib/target/armv7-linux-androideabi/release/librust_c_zlib.so android/libs/armeabi-v7a/ && cp ../rust_c_zlib/target/i686-linux-android/release/librust_c_zlib.so android/libs/x86/ && cp ../rust_c_zlib/target/x86_64-linux-android/release/librust_c_zlib.so android/libs/x86_64/",
+        "copy-clib": "npm run copy-clib-ios && npm run copy-clib-android && npm run copy-clib-mac",
         "copy-clib-ios": "rm -rf ios/Frameworks/RNZlib.xcframework && cp -R ../rust_c_zlib/target/xcframework/RNZlib.xcframework ios/Frameworks/",
-        "copy-clib-android": "cp ../rust_c_zlib/target/aarch64-linux-android/release/librust_c_zlib.so android/libs/arm64-v8a/ && cp ../rust_c_zlib/target/armv7-linux-androideabi/release/librust_c_zlib.so android/libs/armeabi-v7a/ && cp ../rust_c_zlib/target/i686-linux-android/release/librust_c_zlib.so android/libs/x86/ && cp ../rust_c_zlib/target/x86_64-linux-android/release/librust_c_zlib.so android/libs/x86_64/"
+        "copy-clib-android": "cp ../rust_c_zlib/target/aarch64-linux-android/release/librust_c_zlib.so android/libs/arm64-v8a/ && cp ../rust_c_zlib/target/armv7-linux-androideabi/release/librust_c_zlib.so android/libs/armeabi-v7a/ && cp ../rust_c_zlib/target/i686-linux-android/release/librust_c_zlib.so android/libs/x86/ && cp ../rust_c_zlib/target/x86_64-linux-android/release/librust_c_zlib.so android/libs/x86_64/ && cp ../rust_c_zlib/include/zlib_ffi.h cpp/zlib_ffi.h",
+        "copy-clib-mac": "mkdir -p mac && cp ../rust_c_zlib/target/release/librust_c_zlib.a mac/ && cp ../rust_c_zlib/include/zlib_ffi.h cpp/zlib_ffi.h"
     },
     "dependencies": {
         "@types/readable-stream": "^4.0.23",

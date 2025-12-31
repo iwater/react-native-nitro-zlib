@@ -8,7 +8,7 @@ def getExtOrDefault(name, defaultValue) {
 android {
     namespace "com.margelo.nitro.nitro_zlib"
 
-    ndkVersion getExtOrDefault("ndkVersion", "26.1.10909125")
+    ndkVersion getExtOrDefault("ndkVersion", "27.1.12297006")
     compileSdkVersion getExtOrDefault('compileSdkVersion', 35)
 
     defaultConfig {

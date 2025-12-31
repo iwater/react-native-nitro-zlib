@@ -2,6 +2,11 @@
 
 High-performance, 100% Node.js compatible Zlib module for React Native, powered by [Nitro Modules](https://nitro.margelo.com) and Rust.
 
+[![license](https://img.shields.io/badge/license-ISC-blue.svg)]()
+[![platform](https://img.shields.io/badge/platform-ios%20%7C%20android-lightgrey.svg)]()
+[![compatibility](https://img.shields.io/badge/Node.js-100%25%20zlib-green.svg)]()
+[中文文档](./README_zh.md)
+
 ## 🌟 Features
 
 -   🚀 **Blazing Fast**: Core logic written in Rust (`flate2` & `brotli` crates), bridging directly to C++ via Nitro Modules with zero JSI serialization overhead.
