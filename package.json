@@ -1,6 +1,6 @@
 {
     "name": "react-native-nitro-zlib",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Node.js Zlib implementation for React Native using Nitro Modules and Rust",
     "homepage": "https://github.com/iwater/react-native-nitro-zlib",
     "type": "module",
