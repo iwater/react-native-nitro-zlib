@@ -9,9 +9,9 @@ Pod::Spec.new do |s|
   s.homepage     = package["homepage"]
   s.license      = package["license"]
   s.authors      = package["author"]
-
+  
   s.platform     = :ios, "13.0"
-  s.source       = { :git => "https://github.com/iwater/react-native-nitro-zlib.git", :tag => "v#{s.version}" }
+  s.source       = { :git => package["repository"]["url"].gsub("git+", ""), :tag => "v#{s.version}" }
 
   s.source_files = [
     "ios/**/*.{h,m,mm,swift}",
