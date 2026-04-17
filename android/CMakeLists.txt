@@ -9,12 +9,14 @@ set(CMAKE_CXX_STANDARD 20)
 add_library(${PACKAGE_NAME} SHARED
         ../cpp/HybridZlib.cpp
         ../cpp/HybridZlibStream.cpp
+        ../3rd/minilzo-2.10/minilzo.c
         OnLoad.cpp
 )
 
 # Include paths for our headers
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/../cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../3rd/minilzo-2.10
 )
 
 # Include the Nitrogen-generated CMake file

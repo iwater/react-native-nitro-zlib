@@ -20,6 +20,8 @@ export interface NitroZlib extends HybridObject<{ ios: 'swift', android: 'kotlin
     gunzipSync(data: ArrayBuffer): ArrayBuffer
     brotliCompressSync(data: ArrayBuffer, quality: number, windowBits: number): ArrayBuffer
     brotliDecompressSync(data: ArrayBuffer): ArrayBuffer
+    lzoCompressSync(data: ArrayBuffer): ArrayBuffer
+    lzoDecompressSync(data: ArrayBuffer, outputLength?: number): ArrayBuffer
     crc32(data: ArrayBuffer, startCrc: number): number
 
     /**

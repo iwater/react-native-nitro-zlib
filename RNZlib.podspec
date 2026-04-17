@@ -15,7 +15,8 @@ Pod::Spec.new do |s|
 
   s.source_files = [
     "ios/**/*.{h,m,mm,swift}",
-    "cpp/**/*.{hpp,cpp}"
+    "cpp/**/*.{hpp,cpp}",
+    "3rd/minilzo-2.10/*.{c,h}"
   ]
 
   s.dependency "React-Core"
@@ -27,11 +28,12 @@ Pod::Spec.new do |s|
     "HEADER_SEARCH_PATHS" => [
       "\"$(PODS_ROOT)/react-native-nitro-modules/ios\"",
       "\"$(PODS_ROOT)/Headers/Public/react-native-nitro-modules\"",
-      "\"$(PODS_TARGET_SRCROOT)/nitrogen/generated/shared/c++\"",
-      "\"$(PODS_TARGET_SRCROOT)/nitrogen/generated/shared\"",
-      "\"$(PODS_TARGET_SRCROOT)/nitrogen/generated/ios/c++\"",
-      "\"$(PODS_TARGET_SRCROOT)/nitrogen/generated/ios\"",
-      "\"$(PODS_TARGET_SRCROOT)/cpp\"",
+      "$(PODS_TARGET_SRCROOT)/nitrogen/generated/shared/c++",
+      "$(PODS_TARGET_SRCROOT)/nitrogen/generated/shared",
+      "$(PODS_TARGET_SRCROOT)/nitrogen/generated/ios/c++",
+      "$(PODS_TARGET_SRCROOT)/nitrogen/generated/ios",
+      "$(PODS_TARGET_SRCROOT)/cpp",
+      "$(PODS_TARGET_SRCROOT)/3rd/minilzo-2.10",
       "\"$(PODS_TARGET_SRCROOT)/ios/Frameworks/RNZlib.xcframework/ios-arm64/RNZlib.framework/Headers\"",
       "\"$(PODS_TARGET_SRCROOT)/ios/Frameworks/RNZlib.xcframework/ios-arm64_x86_64-simulator/RNZlib.framework/Headers\""
     ],

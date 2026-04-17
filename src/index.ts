@@ -224,6 +224,18 @@ export function brotliDecompressSync(buf: any, options?: any): Buffer {
     return Buffer.from(result);
 }
 
+export function lzoCompressSync(buf: any): Buffer {
+    const buffer = toArrayBuffer(buf);
+    const result = NitroZlibModule.lzoCompressSync(buffer);
+    return Buffer.from(result);
+}
+
+export function lzoDecompressSync(buf: any, outputLength?: number): Buffer {
+    const buffer = toArrayBuffer(buf);
+    const result = NitroZlibModule.lzoDecompressSync(buffer, outputLength);
+    return Buffer.from(result);
+}
+
 export function brotliCompress(buf: any, options: any, callback?: any) {
     if (typeof options === 'function') {
         asyncWrapper(brotliCompressSync, [buf, options], 1);
@@ -237,6 +249,18 @@ export function brotliDecompress(buf: any, options: any, callback?: any) {
         asyncWrapper(brotliDecompressSync, [buf, options], 1);
     } else {
         asyncWrapper(brotliDecompressSync, [buf, options, callback], 2);
+    }
+}
+
+export function lzoCompress(buf: any, callback: any) {
+    asyncWrapper(lzoCompressSync, [buf, callback], 1);
+}
+
+export function lzoDecompress(buf: any, outputLength: any, callback?: any) {
+    if (typeof outputLength === 'function') {
+        asyncWrapper(lzoDecompressSync, [buf, outputLength], 1);
+    } else {
+        asyncWrapper(lzoDecompressSync, [buf, outputLength, callback], 2);
     }
 }
 
@@ -268,6 +292,10 @@ export default {
     brotliCompressSync,
     brotliDecompress,
     brotliDecompressSync,
+    lzoCompress,
+    lzoCompressSync,
+    lzoDecompress,
+    lzoDecompressSync,
     crc32,
     constants,
     // Stream exports

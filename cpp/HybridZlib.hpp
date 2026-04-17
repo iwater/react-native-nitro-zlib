@@ -37,6 +37,11 @@ public:
                      double windowBits) override;
   std::shared_ptr<ArrayBuffer>
   brotliDecompressSync(const std::shared_ptr<ArrayBuffer> &data) override;
+  std::shared_ptr<ArrayBuffer>
+  lzoCompressSync(const std::shared_ptr<ArrayBuffer> &data) override;
+  std::shared_ptr<ArrayBuffer>
+  lzoDecompressSync(const std::shared_ptr<ArrayBuffer> &data,
+                    std::optional<double> outputLength) override;
   double crc32(const std::shared_ptr<ArrayBuffer> &data,
                double startCrc) override;
 
